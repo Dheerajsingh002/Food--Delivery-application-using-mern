@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate} from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 export default function Signup() {
@@ -9,6 +9,7 @@ export default function Signup() {
     password:"",
     geolocation:"",
   });
+  let navigate=useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(JSON.stringify({
@@ -33,6 +34,11 @@ export default function Signup() {
     console.log(json);
     if (!json.success) {
       alert("enter valid credentials");
+    }
+    if (json.success) {
+      localStorage.setItem('userEmail', credentials.email)
+      localStorage.setItem("authToken", json.authToken);
+      navigate("/login");
     }
   };
   const onChange = (event) => {
@@ -132,6 +138,7 @@ export default function Signup() {
               <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' />
             </div>
             <button type="submit" className="m-3 btn btn-success">Submit</button>
+            
             <Link to="/login" className="m-3 mx-1 btn btn-danger">Already a user</Link>
           </form>
         </div>
