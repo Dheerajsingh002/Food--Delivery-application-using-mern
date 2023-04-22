@@ -10,6 +10,7 @@ const mongoDB = async () => {
     });
     console.log('Connected to MongoDB');
 
+    
     const foodData = await mongoose.connection.db.collection("food").find({}).toArray();
     const foodCategoryData = await mongoose.connection.db.collection("foodCategory").find({}).toArray();
 
