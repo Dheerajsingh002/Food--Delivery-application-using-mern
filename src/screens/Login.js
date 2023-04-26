@@ -43,7 +43,7 @@ export default function Login() {
   };
   return (
     <>
-      <div style={{backgroundImage: 'url("https://mykaleidoscope.ru/en/uploads/posts/2022-09/1663731150_1-mykaleidoscope-ru-p-food-on-a-black-background-yeda-oboi-1.jpg")', height: '100vh', backgroundSize: 'cover' }}>
+      <div style={{backgroundImage: 'url("https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg")', height: '100vh', backgroundSize: 'cover' }}>
       <div>
         <Navbar/>
       </div>

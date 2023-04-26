@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Order = require('../models/Orders.js')
 
+
 router.post('/orderData', async (req, res) => {
     if (!req.body.email) {
         return res.status(400).json({ error: 'Email field is required.' });
@@ -52,4 +53,5 @@ router.post('/myOrderData', async (req, res) => {
     
 
 });
+
 module.exports=router;
