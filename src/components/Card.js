@@ -27,6 +27,7 @@ export default function Card(props) {
       }
       else if (food.size !== size) {
         await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size,img: props.ImgSrc })
+        // alert("Item Added")
         console.log("Size different so simply ADD one more to the list")
         return
       }
@@ -52,7 +53,7 @@ export default function Card(props) {
             <h5 className="card-title">{props.foodItem.name}</h5>
             {/* <p className="card-text">Some quick example text to .</p> */}
             <div className="container w-100">
-              <select name="" id="" className="m-2 h-100  bg-success rounded" onChange={(e)=>setQty(e.target.value)}>
+              <select name="" id="" className="m-2 h-100  bg-danger rounded" onChange={(e)=>setQty(e.target.value)}>
                 {Array.from(Array(6), (e, i) => {
                   return (
                     <option value={i + 1} key={i + 1}>
@@ -61,7 +62,7 @@ export default function Card(props) {
                   );
                 })}
               </select>
-              <select name="" id="" className="m-2 h-100  bg-success rounded" ref={priceRef} onChange={(e)=>setSize(e.target.value)}>
+              <select name="" id="" className="m-2 h-100  bg-danger rounded" ref={priceRef} onChange={(e)=>setSize(e.target.value)}>
                {priceOptions.map((data)=>
                {
                 return <option key={data} value={data}>{data}</option>
@@ -71,7 +72,7 @@ export default function Card(props) {
             </div>
             <hr>
           </hr>
-          <button className={`btn btn-success justify-center ms-2`} onClick={handleAddToCart}>Add to Cart</button>
+          <button className={`btn bg-danger justify-center ms-2`} onClick={handleAddToCart}>Add to Cart</button>
           </div>
           
         </div>
