@@ -67,7 +67,7 @@ export default function MyOrder() {
                                       maxHeight: "360px",
                                     }}
                                   >
-                                    <img src={arrayData.img} className="card-img-top" alt="..." style={{ height: "120px", objectFit: "fill" }} />
+                                    <img src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg" className="card-img-top" alt="..." style={{ height: "120px", objectFit: "fill" }} />
                                     <div className="card-body">
                                       <h5 className="card-title">
                                         {arrayData.name}
